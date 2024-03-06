@@ -34,8 +34,6 @@ import dash
 from dash import html, dcc, dash_table
 from dash.dependencies import Input, Output
 import plotly.graph_objects as go
-import chart_studio.plotly as py
-import chart_studio
 import numpy as np
 import pandas as pd
 
