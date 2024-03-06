@@ -38,7 +38,6 @@ import chart_studio.plotly as py
 import chart_studio
 import numpy as np
 import pandas as pd
-chart_studio.tools.set_credentials_file(username='Crapotca', api_key='M4RwlPZfd7zrzjsl5aU8')
 
 # Suppress warnings to make the output cleaner
 import warnings
@@ -59,6 +58,7 @@ chmm_best.set_index('Crypto', inplace=True)
 
 # Initialize the Dash app
 app = dash.Dash(__name__)
+server = app.server
 
 returns_volatility = pd.DataFrame(columns=['Mean Returns (Weekly)', 'Realized Volatility (Weekly)',
                                            'Mean Returns (Monthly)', 'Realized Volatility (Monthly)',
@@ -305,14 +305,6 @@ def update_crypto_plots(top_slider_value, bottom_slider_value):
     cppi_strategy_plot = plot_cppi_strategy(selected_cppi)
     spread_plot = plot_spread(selected_cppi)
     summary_data = create_summary_table(selected_cppi)
-
-
-    py.plot(crypto_plot, filename=f'{selected_crypto_symbol}graph1', auto_open=True)
-    py.plot(state_plot, filename=f'{selected_crypto_symbol}graph2', auto_open=True)
-    py.plot(heatmap, filename=f'{selected_crypto_symbol}graph3', auto_open=True)
-    py.plot(rsi_plot, filename=f'{selected_crypto_symbol}graph4', auto_open=True)
-    py.plot(cppi_strategy_plot, filename=f'{selected_crypto_symbol}graph5', auto_open=True)
-    py.plot(spread_plot, filename=f'{selected_crypto_symbol}graph6', auto_open=True)
 
     return (title,
             crypto_plot,
