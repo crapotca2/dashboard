@@ -2,7 +2,6 @@ Pandas
 NumPy
 Dash
 Plotly
-Ast
 Statsmodels
 SciPy
 requests
