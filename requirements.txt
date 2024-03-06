@@ -1,0 +1,9 @@
+Pandas
+NumPy
+Dash
+Plotly
+Ast
+Chart Studio
+Statsmodels
+SciPy
+requests
