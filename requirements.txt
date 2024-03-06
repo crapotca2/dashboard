@@ -5,4 +5,3 @@ Plotly
 Statsmodels
 SciPy
 requests
-ast
