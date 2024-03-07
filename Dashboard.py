@@ -56,6 +56,7 @@ chmm_best.set_index('Crypto', inplace=True)
 
 # Initialize the Dash app
 app = dash.Dash(__name__)
+server = app.server
 
 returns_volatility = pd.DataFrame(columns=['Mean Returns (Weekly)', 'Realized Volatility (Weekly)',
                                            'Mean Returns (Monthly)', 'Realized Volatility (Monthly)',
