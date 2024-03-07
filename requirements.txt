@@ -6,3 +6,4 @@ Statsmodels
 SciPy
 requests
 gunicorn
+matplotlib
