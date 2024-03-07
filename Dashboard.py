@@ -56,7 +56,6 @@ chmm_best.set_index('Crypto', inplace=True)
 
 # Initialize the Dash app
 app = dash.Dash(__name__)
-server = app.server
 
 returns_volatility = pd.DataFrame(columns=['Mean Returns (Weekly)', 'Realized Volatility (Weekly)',
                                            'Mean Returns (Monthly)', 'Realized Volatility (Monthly)',
@@ -240,8 +239,7 @@ def update_crypto_plots(top_slider_value, bottom_slider_value):
             selected_crypto_index = bottom_slider_value
             top_slider_value = bottom_slider_value
 
-    selected_crypto_symbol = 'bitcoin'
-    #selected_crypto_symbol = crypto_symbols[selected_crypto_index]
+    selected_crypto_symbol = crypto_symbols[selected_crypto_index]
     selected_label = label[selected_crypto_index]
 
     selected_search_data = search_data[selected_crypto_symbol]
