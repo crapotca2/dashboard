@@ -39,7 +39,7 @@ for symbol in crypto_symbols:
 
 def read_saved_crypto_data(symbols):
     for symbol in symbols:
-        filename = f'{symbol}_data.csv'
+        filename = f'static/data/{symbol}_data.csv'
         dati = pd.read_csv(filename)
         dati['time'] = pd.to_datetime(dati['time'])
         dati.set_index('time', inplace=True)
@@ -48,7 +48,7 @@ def read_saved_crypto_data(symbols):
 
 def read_model_data(symbols):
     for symbol in symbols:
-        filename = f'{symbol}1_data.csv'
+        filename = f'static/data/{symbol}1_data.csv'
         dati = pd.read_csv(filename)
         dati.set_index('time', inplace=True)
         model_data[symbol] = dati
@@ -56,7 +56,7 @@ def read_model_data(symbols):
 
 def read_google_data(symbols):
     for symbol in symbols:
-        filename = f'{symbol}_searches.csv'
+        filename = f'static/data/{symbol}_searches.csv'
         dati = pd.read_csv(filename)
         dati.set_index('Settimana', inplace=True)
         google_data[symbol] = dati
@@ -65,7 +65,7 @@ def read_google_data(symbols):
 def read_cppi_data(symbols):
     cppi_data = {}
     for symbol in symbols:
-        filename = f'{symbol}_cppi.csv'
+        filename = f'static/data/{symbol}_cppi.csv'
         dati = pd.read_csv(filename, index_col='time')
         dati.index = pd.to_datetime(dati.index)
         cppi_data[symbol] = dati

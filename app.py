@@ -50,9 +50,9 @@ model_data = read_model_data(crypto_symbols)
 search_data = read_google_data(crypto_symbols)
 cppi_data = read_cppi_data(crypto_symbols)
 
-chmm_scores = pd.read_csv('hmm_scores.csv')
+chmm_scores = pd.read_csv('static/data/hmm_scores.csv')
 chmm_scores.set_index('Crypto', inplace=True)
-chmm_best = pd.read_csv('hmm_best_models.csv')
+chmm_best = pd.read_csv('static/data/hmm_best_models.csv')
 chmm_best.set_index('Crypto', inplace=True)
 
 # Initialize the Dash app
